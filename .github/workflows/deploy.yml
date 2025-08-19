@@ -26,12 +26,17 @@ jobs:
     - name: Build
       run: npm run build
 
+    - name: Copy built files to root
+      run: |
+        rm -rf 404* _next* index.html index.txt || true
+        cp -r out/* .
+        
     - name: Add .nojekyll file
-      run: touch ./out/.nojekyll
+      run: touch .nojekyll
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./out
+        publish_dir: .
