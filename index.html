@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanjay Santhanam - Software Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+    
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-text">SANJAY</span>
+                <span class="logo-accent">SANTHANAM</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">SOFTWARE</span>
+                            <span class="title-line highlight">DEVELOPER</span>
+                        </h1>
+                        <p class="hero-subtitle">Building scalable applications with Java, Spring Boot, and modern web technologies</p>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <div class="code-window">
+                            <div class="window-header">
+                                <div class="window-controls">
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                </div>
+                                <span class="window-title">portfolio.java</span>
+                            </div>
+                            <div class="code-content">
+                                <div class="code-line"><span class="keyword">public class</span> <span class="class-name">SanjaySanthanam</span> {</div>
+                                <div class="code-line">  <span class="keyword">private</span> String role = <span class="string">"Software Developer"</span>;</div>
+                                <div class="code-line">  <span class="keyword">private</span> String[] skills = {</div>
+                                <div class="code-line">    <span class="string">"Java"</span>, <span class="string">"Spring Boot"</span>, <span class="string">"React"</span></div>
+                                <div class="code-line">  };</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-line"></div>
+                    <span class="scroll-text">SCROLL</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">01</span>
+                    <h2 class="section-title">ABOUT ME</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Passionate Software Developer</h3>
+                        <p>With over 4 years of experience in building scalable microservices-based applications using Java, Spring Boot, and React.js, I specialize in creating robust backend systems and engaging user interfaces.</p>
+                        <p>Holding a Master's degree in Computer Science from Syracuse University, I bring a strong foundation in software engineering principles and a passion for continuous learning.</p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number">4+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Citations</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="terminal-window">
+                            <div class="terminal-header">
+                                <span class="terminal-title">~/sanjay</span>
+                            </div>
+                            <div class="terminal-content">
+                                <div class="terminal-line">$ whoami</div>
+                                <div class="terminal-output">sanjay.santhanam</div>
+                                <div class="terminal-line">$ cat skills.txt</div>
+                                <div class="terminal-output">Java, Spring Boot, React.js</div>
+                                <div class="terminal-output">Node.js, MongoDB, PostgreSQL</div>
+                                <div class="terminal-output">Docker, Kubernetes, AWS</div>
+                                <div class="terminal-cursor">_</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">02</span>
+                    <h2 class="section-title">EXPERIENCE</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 2024 - Present</div>
+                        <div class="timeline-content">
+                            <h3>Software Developer</h3>
+                            <h4>Johnson & Johnson</h4>
+                            <p>Architected a cloud microservices using Java 17 and Spring Boot to streamline patient appointment scheduling across the enterprise. Delivering solutions that transform the UI by 95% using React.js and API gateway.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Java 17</span>
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">React.js</span>
+                                <span class="tech-tag">API Gateway</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">May 2023 - Apr 2024</div>
+                        <div class="timeline-content">
+                            <h3>Software Developer</h3>
+                            <h4>Citi</h4>
+                            <p>Facilitated the construction of Spring Boot microservices for real-time credit card fraud checks using Kafka channels and Docker, resulting in a 15% increase in accuracy over 3 million+ transactions. Built credit card validation microservice using Java 17 backend services with RESTful API.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Kafka</span>
+                                <span class="tech-tag">Docker</span>
+                                <span class="tech-tag">RESTful APIs</span>
+                                <span class="tech-tag">Java 17</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jun 2020 - Jul 2022</div>
+                        <div class="timeline-content">
+                            <h3>Software Developer</h3>
+                            <h4>Zentek Infosoft</h4>
+                            <p>Streamlined operations UI using Spring Boot, Angular, and MySQL, streamlining systems to enhance reporting and analytics capabilities. Collaborated in architectural decisions building web applications and contributed to reducing manual HR processing time by 80%.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Spring Boot</span>
+                                <span class="tech-tag">Angular</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">03</span>
+                    <h2 class="section-title">PROJECTS</h2>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>FHIR-Compliant Patient Scheduling Microservice</h3>
+                        </div>
+                        <p>Architected a FHIR-compliant microservice using Java 17 and Spring Boot to streamline patient appointment scheduling across 15 hospitals, reducing average booking time by 35% and supporting 24/7 availability.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java 17</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">FHIR</span>
+                            <span class="tech-tag">Microservices</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Real-Time Credit Card Fraud Detection System</h3>
+                        </div>
+                        <p>Facilitated the construction of Spring Boot microservices for real-time credit card fraud checks using Kafka Streams and Oracle, supporting over 1M transactions per hour with 15% accuracy improvement.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Kafka Streams</span>
+                            <span class="tech-tag">Oracle</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Enterprise HR Portal with Role-Based Access</h3>
+                        </div>
+                        <p>Delivered a role-based enterprise HR portal using Java Spring Boot, Angular, and MySQL, streamlining onboarding workflows and reducing manual HR processing time by 40%.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">Angular</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>Flight Arrival Delay Prediction Model</h3>
+                        </div>
+                        <p>Leveraged Scikit-learn and XGBoost to predict flight arrival delays with 94% accuracy on the OpenFlights dataset, while visualizing cascading delay impacts using Matplotlib and Seaborn for 15% improvement in airline scheduling efficiency.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Scikit-learn</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>CLOUDKEY: Secure Authentication Service</h3>
+                        </div>
+                        <p>Crafted a secure, cloud-based user authentication system using Firebase Auth, Google OAuth, and API keys, while enhancing frontend/backend flows with React and Node.js; boosted login efficiency by 30% and reduced access errors by 20%.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Firebase Auth</span>
+                            <span class="tech-tag">Google OAuth</span>
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>TensorFlow Image Detection Pipeline</h3>
+                        </div>
+                        <p>Established a TensorFlow-powered early sepsis detection model into a Python Flask API and integrated it with cloud-alert systems in SMART-on-FHIR-compliant REST APIs implementing the healthcare interoperability data standard, removing 80% of manual entry overhead.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">Python Flask</span>
+                            <span class="tech-tag">SMART-on-FHIR</span>
+                            <span class="tech-tag">REST APIs</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">04</span>
+                    <h2 class="section-title">SKILLS</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Programming Languages</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Java</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Python</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">C++</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Technologies</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Spring Boot</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="95%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Angular</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Databases & Cloud</h3>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <span class="skill-name">PostgreSQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="90%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">MongoDB</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="85%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">AWS</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="75%"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-width="80%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-number">05</span>
+                    <h2 class="section-title">GET IN TOUCH</h2>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Let's Build Something Amazing Together</h3>
+                        <p>I'm always interested in new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out!</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <span class="contact-label">Email</span>
+                                <a href="mailto:ssantha2@syr.edu" class="contact-value">ssantha2@syr.edu</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">Location</span>
+                                <span class="contact-value">Syracuse, NY</span>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">LinkedIn</span>
+                                <a href="https://linkedin.com/in/sanjaysanthanam" class="contact-value">linkedin.com/in/sanjaysanthanam</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-label">GitHub</span>
+                                <a href="https://github.com/sanjaysanthanam" class="contact-value">github.com/sanjaysanthanam</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 Sanjay Santhanam. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="mailto:ssantha2@syr.edu">Email</a>
+                    <a href="https://linkedin.com/in/sanjaysanthanam">LinkedIn</a>
+                    <a href="https://github.com/sanjaysanthanam">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
