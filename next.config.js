@@ -11,8 +11,9 @@ const nextConfig = {
     // your project has type errors.
     ignoreBuildErrors: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/sanjays2402' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/sanjays2402/' : '',
+  // For username.github.io repositories, no basePath needed
+  // basePath: process.env.NODE_ENV === 'production' ? '/sanjays2402' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/sanjays2402/' : '',
 }
 
 module.exports = nextConfig

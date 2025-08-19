@@ -10,7 +10,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/ - commented out so built files can be committed for GitHub Pages
 
 # production
 /build

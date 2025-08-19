@@ -23,7 +23,7 @@ npm run dev
 npm run build
 ```
 
-## 📦 Deployment to GitHub Pages
+## 📦 GitHub Pages Deployment
 
 ### Step 1: Repository Configuration ✅
 The repository is already configured for **sanjays2402**:
@@ -95,4 +95,4 @@ The portfolio is fully optimized for mobile devices including:
 - **Theme**: next-themes
 - **Icons**: Lucide React
 - **Font**: Atkinson Hyperlegible (dyslexic-friendly)
-- **Deployment**: GitHub Pages with GitHub Actions# Sanjays2402-Sanjays2402.github.io
+- **Deployment**: GitHub Pages with GitHub Actions
