@@ -95,4 +95,4 @@ The portfolio is fully optimized for mobile devices including:
 - **Theme**: next-themes
 - **Icons**: Lucide React
 - **Font**: Atkinson Hyperlegible (dyslexic-friendly)
-- **Deployment**: GitHub Pages with GitHub Actions
+- **Deployment**: GitHub Pages with GitHub Actions# Sanjays2402-Sanjays2402.github.io
