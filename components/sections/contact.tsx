@@ -154,7 +154,7 @@ export function ContactSection() {
             className="mt-20 pt-8 border-t border-border text-center"
           >
             <p className="text-muted-foreground">
-              © 2024 Sanjay Santhanam. Built with Next.js, Tailwind CSS, and Framer Motion.
+              © 2026 Sanjay Santhanam. Built with Next.js, Tailwind CSS, and Framer Motion.
             </p>
           </motion.footer>
         </div>

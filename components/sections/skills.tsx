@@ -95,14 +95,6 @@ const SkillCard = ({ skill, index }: { skill: string, index: number }) => {
       className="relative group cursor-pointer"
     >
       <div className="bg-gradient-to-br from-card to-muted/50 border border-border rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
-        {/* Animated background effect */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 opacity-0 group-hover:opacity-100"
-          initial={false}
-          animate={{ x: ['-100%', '100%'] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-        />
-        
         {/* Skill name */}
         <div className="relative z-10 text-center">
           <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-300">
@@ -188,7 +180,7 @@ export function SkillsSection() {
           <h3 className="text-xl font-bold text-foreground mb-6">
             Other Technologies & Tools
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2 md:gap-3 max-w-6xl mx-auto">
             {[
               'Flask', 'FastAPI', 'Microsoft SQL Server', 'NoSQL', 'GCP', 'Ansible',
               'Git', 'GitHub', 'GitLab', 'JIRA', 'Trello', 'Confluence',
@@ -203,7 +195,7 @@ export function SkillsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="px-3 py-2 text-sm font-dyslexic bg-muted text-muted-foreground rounded-full border border-border hover:bg-primary/10 hover:text-primary hover:border-primary/20 transition-all duration-300 cursor-default"
+                className="px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm font-dyslexic bg-muted text-muted-foreground rounded-full border border-border hover:bg-primary/10 hover:text-primary hover:border-primary/20 transition-all duration-300 cursor-default"
               >
                 {tool}
               </motion.span>

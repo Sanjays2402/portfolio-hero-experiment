@@ -8,7 +8,14 @@
       "Bash(git add:*)",
       "Bash(cp:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git fetch:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(npm install)",
+      "Read(//var/folders/9g/q9vh1btn7wqdzh95619wmlh80000gn/T/TemporaryItems/NSIRD_screencaptureui_PUUUJ4/**)",
+      "Read(//var/folders/9g/q9vh1btn7wqdzh95619wmlh80000gn/T/TemporaryItems/NSIRD_screencaptureui_V8CWfr/**)",
+      "Read(//var/folders/9g/q9vh1btn7wqdzh95619wmlh80000gn/T/TemporaryItems/NSIRD_screencaptureui_yINoeg/**)",
+      "Read(//var/folders/9g/q9vh1btn7wqdzh95619wmlh80000gn/T/TemporaryItems/NSIRD_screencaptureui_3OLZE0/**)"
     ],
     "deny": [],
     "ask": []
