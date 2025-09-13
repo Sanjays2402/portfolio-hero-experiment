@@ -21,6 +21,10 @@ export const metadata: Metadata = {
   keywords: ['Software Developer', 'Java', 'Spring Boot', 'React.js', 'Full Stack Developer', 'Syracuse University'],
   authors: [{ name: 'Sanjay Santhanam' }],
   creator: 'Sanjay Santhanam',
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({
