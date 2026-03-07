@@ -6,7 +6,7 @@ import { Terminal } from 'lucide-react'
 const stats = [
   { number: '4+', label: 'Years Experience' },
   { number: '10+', label: 'Projects Completed' },
-  { number: '30+', label: 'Research Citations' }
+  { number: '40+', label: 'Research Citations' }
 ]
 
 const terminalCommands = [
