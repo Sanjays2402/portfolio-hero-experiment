@@ -30,7 +30,7 @@ const publications = [
   },
   {
     title: 'Recognition of Pneumonia from the X-Ray image pattern using Convolutional Neural Networks',
-    authors: 'Sathya Soundararajan, Thyagaraj T, YANAMADALA VASU DEVA SAI',
+    authors: 'Sathya Soundararajan, Thyagaraj T, Yanamadala Vasu Deva Sai',
     conference: 'Springer - International Conference on Innovations, Research and Emerging Technologies (IRCET-21)',
     year: '2021',
     citations: '2',
@@ -38,8 +38,8 @@ const publications = [
   },
   {
     title: 'Computer Vision based Road Lane Detection',
-    authors: 'S S. Sidhaarthan',
-    journal: 'Artificial & Computational Intelligence 2 (2)',
+    authors: 'S S. Sidhaarthan, S Sanjay',
+    journal: 'Artificial & Computational Intelligence',
     year: '2021',
     citations: '0',
     type: 'Journal Article'

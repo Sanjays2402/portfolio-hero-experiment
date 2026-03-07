@@ -16,7 +16,7 @@ const experiences = [
     title: 'Software Developer',
     company: 'Citi',
     period: 'May 2023 - Apr 2024',
-    location: 'Nyack, New York, United States · Remote',
+    location: 'New York, United States · Remote',
     description: 'Facilitated the construction of Spring Boot microservices for real-time credit card fraud checks using Kafka Streams and Oracle, supporting over 1M transactions per hour and meeting strict latency requirements with 15% accuracy improvement.',
     technologies: ['Spring Boot', 'Kafka Streams', 'Oracle', 'Docker', 'RESTful APIs', 'Java 17']
   },
