@@ -7,7 +7,7 @@ Modern portfolio website built with Next.js 14, Tailwind CSS, and Framer Motion.
 - **Modern Tech Stack**: Next.js 14, TypeScript, Tailwind CSS, Framer Motion
 - **Responsive Design**: Mobile-first approach with smooth animations
 - **Dark/Light Theme**: Theme switching with next-themes
-- **Accessibility**: Dyslexic-friendly Atkinson Hyperlegible font
+- **Accessibility**: Optimized for high legibility with Inter and JetBrains Mono fonts
 - **Performance**: Optimized for fast loading and smooth interactions
 
 ## 🛠️ Local Development
@@ -26,11 +26,7 @@ npm run build
 ## 📦 GitHub Pages Deployment
 
 ### Step 1: Repository Configuration ✅
-The repository is already configured for **sanjays2402**:
-```js
-basePath: process.env.NODE_ENV === 'production' ? '/sanjays2402' : '',
-assetPrefix: process.env.NODE_ENV === 'production' ? '/sanjays2402/' : '',
-```
+This is a standard `username.github.io` User Page site, so no `basePath` is required in `next.config.js`. It renders directly to the root.
 
 ### Step 2: Push to GitHub
 ```bash
@@ -44,7 +40,7 @@ git add .
 git commit -m "Initial commit"
 
 # Add GitHub remote
-git remote add origin https://github.com/Sanjays2402/sanjays2402.git
+git remote add origin https://github.com/Sanjays2402/Sanjays2402.github.io.git
 
 # Push to main branch
 git push -u origin main
@@ -54,12 +50,12 @@ git push -u origin main
 1. Go to your GitHub repository
 2. Click on **Settings** tab
 3. Scroll down to **Pages** section
-4. Under **Source**, select **GitHub Actions**
-5. The workflow will automatically deploy your site
+4. Under **Source**, select **Deploy from a branch** and choose **main**, folder **/(root)**
+   - *(Note: currently we build locally and push the static output directly to the root of the repo)*
 
 ### Step 4: Access Your Site
 Your portfolio will be available at:
-`https://sanjays2402.github.io/sanjays2402`
+`https://sanjays2402.github.io/`
 
 ## 📱 Mobile Optimization
 
@@ -94,5 +90,5 @@ The portfolio is fully optimized for mobile devices including:
 - **Animations**: Framer Motion
 - **Theme**: next-themes
 - **Icons**: Lucide React
-- **Font**: Atkinson Hyperlegible (dyslexic-friendly)
+- **Font**: Inter & JetBrains Mono
 - **Deployment**: GitHub Pages with GitHub Actions
