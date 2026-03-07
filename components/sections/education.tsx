@@ -43,7 +43,7 @@ const itemVariants = {
 
 export function EducationSection() {
   return (
-    <section id="education" className="py-20 bg-muted/30">
+    <section id="education" className="py-20 glass-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -72,7 +72,7 @@ export function EducationSection() {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="bg-card border border-border rounded-lg p-8 shadow-lg hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="glass-card rounded-lg p-8 shadow-lg hover:shadow-xl hover:bg-card/50 hover:border-white/20 transition-all duration-300 relative overflow-hidden"
             >
               {/* Background decoration */}
               <div className={`absolute top-0 left-0 w-1 h-full ${

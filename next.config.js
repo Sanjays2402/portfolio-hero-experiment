@@ -6,10 +6,7 @@ const nextConfig = {
     unoptimized: true
   },
   typescript: {
-    // !! WARN !!
-    // Dangerously allow production builds to successfully complete even if
-    // your project has type errors.
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: false,
   },
   // For username.github.io repositories, no basePath needed
   // basePath: process.env.NODE_ENV === 'production' ? '/sanjays2402' : '',

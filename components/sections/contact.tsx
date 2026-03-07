@@ -53,7 +53,7 @@ const itemVariants = {
 
 export function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-muted/30">
+    <section id="contact" className="py-20 glass-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -81,13 +81,13 @@ export function ContactSection() {
               variants={itemVariants}
               className="text-2xl font-bold text-foreground mb-6"
             >
-              Let's Build Something Amazing Together
+              Let&apos;s Build Something Amazing Together
             </motion.h3>
             <motion.p
               variants={itemVariants}
               className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed"
             >
-              I'm always interested in new opportunities and collaborations. 
+              I&apos;m always interested in new opportunities and collaborations. 
               Whether you have a project in mind or just want to connect, 
               feel free to reach out!
             </motion.p>
@@ -154,7 +154,7 @@ export function ContactSection() {
             className="mt-20 pt-8 border-t border-border text-center"
           >
             <p className="text-muted-foreground">
-              © 2026 Sanjay Santhanam. Built with Next.js, Tailwind CSS, and Framer Motion.
+              © 2026 Sanjay Santhanam.
             </p>
           </motion.footer>
         </div>
@@ -167,7 +167,7 @@ const ContactCard = ({ contact }: { contact: typeof contactInfo[0] }) => {
   const Icon = contact.icon
   
   return (
-    <div className="bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300 group">
+    <div className="glass-card rounded-lg p-6 shadow-lg hover:shadow-xl hover:bg-card/50 hover:border-white/20 transition-all duration-300 group">
       <div className="flex items-center gap-4">
         <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
           <Icon className="h-6 w-6 text-primary" />

@@ -98,17 +98,17 @@ export function ResearchSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16"
         >
-          <div className="text-center p-6 bg-card border border-border rounded-lg">
+          <div className="text-center p-6 glass-stat rounded-lg">
             <BookOpen className="h-8 w-8 text-primary mx-auto mb-2" />
             <div className="text-2xl font-bold text-foreground mb-1">{publications.length}</div>
             <div className="text-sm text-muted-foreground">Publications</div>
           </div>
-          <div className="text-center p-6 bg-card border border-border rounded-lg">
+          <div className="text-center p-6 glass-stat rounded-lg">
             <Award className="h-8 w-8 text-primary mx-auto mb-2" />
             <div className="text-2xl font-bold text-foreground mb-1">{totalCitations}+</div>
             <div className="text-sm text-muted-foreground">Citations</div>
           </div>
-          <div className="text-center p-6 bg-card border border-border rounded-lg">
+          <div className="text-center p-6 glass-stat rounded-lg">
             <Calendar className="h-8 w-8 text-primary mx-auto mb-2" />
             <div className="text-2xl font-bold text-foreground mb-1">2021</div>
             <div className="text-sm text-muted-foreground">Research Year</div>
@@ -128,7 +128,7 @@ export function ResearchSection() {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -2, shadow: "0 10px 25px rgba(0,0,0,0.1)" }}
-              className="bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="glass-card rounded-lg p-6 shadow-lg hover:shadow-xl hover:bg-card/50 hover:border-white/20 transition-all duration-300"
             >
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                 <div className="flex-1">
@@ -196,7 +196,7 @@ export function ResearchSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="px-4 py-2 text-sm font-medium bg-muted text-muted-foreground rounded-full border border-border hover:bg-primary/10 hover:text-primary hover:border-primary/20 transition-all duration-300 cursor-default"
+                className="px-4 py-2 text-sm font-medium glass-badge text-muted-foreground rounded-full hover:bg-primary/10 hover:text-primary hover:border-primary/20 transition-all duration-300 cursor-default"
               >
                 {area}
               </motion.span>

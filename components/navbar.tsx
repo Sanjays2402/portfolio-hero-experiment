@@ -57,7 +57,7 @@ export function Navbar() {
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
           ? 'glass shadow-lg'
-          : 'bg-transparent'
+          : 'bg-transparent backdrop-blur-none'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -94,7 +94,7 @@ const SkillCard = ({ skill, index }: { skill: string, index: number }) => {
       }}
       className="relative group cursor-pointer"
     >
-      <div className="bg-gradient-to-br from-card to-muted/50 border border-border rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
+      <div className="bg-gradient-to-br from-card/30 to-muted/20 backdrop-blur-md border border-white/10 rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden">
         {/* Skill name */}
         <div className="relative z-10 text-center">
           <span className="font-medium text-foreground group-hover:text-primary transition-colors duration-300">
@@ -143,7 +143,7 @@ export function SkillsSection() {
             <motion.div
               key={category.title}
               variants={itemVariants}
-              className="bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="glass-card rounded-lg p-6 shadow-lg hover:shadow-xl hover:bg-card/50 hover:border-white/20 transition-all duration-300"
             >
               {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">
@@ -195,7 +195,7 @@ export function SkillsSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{ scale: 1.1 }}
-                className="px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm font-dyslexic bg-muted text-muted-foreground rounded-full border border-border hover:bg-primary/10 hover:text-primary hover:border-primary/20 transition-all duration-300 cursor-default"
+                className="px-2 py-1 md:px-3 md:py-2 text-xs md:text-sm font-dyslexic glass-badge text-muted-foreground rounded-full hover:bg-primary/10 hover:text-primary hover:border-primary/20 transition-all duration-300 cursor-default"
               >
                 {tool}
               </motion.span>

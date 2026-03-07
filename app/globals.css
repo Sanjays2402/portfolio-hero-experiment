@@ -96,18 +96,96 @@
   }
   
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 hover:bg-primary/90 hover:shadow-md;
+    @apply bg-primary/80 backdrop-blur-sm text-primary-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 hover:bg-primary/90 hover:shadow-md;
   }
   
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 hover:bg-secondary/80 hover:shadow-md;
+    @apply bg-secondary/60 backdrop-blur-sm text-secondary-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 hover:bg-secondary/80 hover:shadow-md;
   }
   
   .btn-ghost {
-    @apply bg-transparent text-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 hover:bg-muted hover:shadow-md;
+    @apply bg-transparent backdrop-blur-sm text-foreground px-6 py-3 rounded-md font-medium transition-all duration-200 hover:bg-muted/50 hover:shadow-md;
   }
   
   .glass {
-    @apply backdrop-blur-md bg-background/80 border border-border;
+    @apply backdrop-blur-xl bg-background/60 border border-white/10 shadow-lg;
   }
+
+  .glass-card {
+    @apply backdrop-blur-lg bg-card/40 border border-white/10 shadow-lg;
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-300 hover:bg-card/50 hover:shadow-xl hover:border-white/20 hover:-translate-y-1;
+  }
+
+  .glass-section {
+    @apply backdrop-blur-sm bg-muted/15;
+  }
+
+  .glass-stat {
+    @apply backdrop-blur-md bg-card/30 border border-white/10 shadow-md;
+  }
+
+  .glass-badge {
+    @apply backdrop-blur-sm bg-muted/30 border border-white/10;
+  }
+}
+
+/* Animated gradient background */
+.gradient-bg {
+  background: 
+    radial-gradient(ellipse at 20% 50%, hsl(var(--primary) / 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsl(var(--primary) / 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(var(--accent) / 0.05) 0%, transparent 50%);
+}
+
+.dark .gradient-bg {
+  background:
+    radial-gradient(ellipse at 20% 50%, hsl(220 80% 60% / 0.12) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, hsl(280 70% 60% / 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, hsl(200 80% 50% / 0.06) 0%, transparent 50%);
+}
+
+/* Floating orbs for glass effect depth */
+.glass-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.glass-orb-1 {
+  width: 400px;
+  height: 400px;
+  top: 10%;
+  left: 10%;
+  background: hsl(var(--primary) / 0.1);
+  animation: float-orb 20s ease-in-out infinite;
+}
+
+.glass-orb-2 {
+  width: 350px;
+  height: 350px;
+  top: 60%;
+  right: 10%;
+  background: hsl(220 80% 60% / 0.08);
+  animation: float-orb 25s ease-in-out infinite reverse;
+}
+
+.glass-orb-3 {
+  width: 300px;
+  height: 300px;
+  bottom: 10%;
+  left: 30%;
+  background: hsl(280 70% 60% / 0.06);
+  animation: float-orb 30s ease-in-out infinite;
+}
+
+@keyframes float-orb {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -30px) scale(1.05); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(10px, -10px) scale(1.02); }
 }

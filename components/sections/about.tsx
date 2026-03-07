@@ -18,7 +18,7 @@ const terminalCommands = [
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20 glass-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -54,7 +54,7 @@ export function AboutSection() {
               </p>
               
               <p>
-                Holding a Master's degree in Computer Science from Syracuse University, 
+                Holding a Master&apos;s degree in Computer Science from Syracuse University, 
                 I bring a strong foundation in software engineering principles and a 
                 passion for continuous learning.
               </p>
@@ -69,7 +69,7 @@ export function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center p-4 rounded-lg bg-card border border-border"
+                  className="text-center p-4 rounded-lg glass-stat"
                 >
                   <div className="text-2xl font-bold text-primary mb-1">
                     {stat.number}
@@ -89,9 +89,9 @@ export function AboutSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div className="glass rounded-lg overflow-hidden shadow-xl">
+            <div className="glass-card rounded-lg overflow-hidden shadow-xl">
               {/* Terminal Header */}
-              <div className="bg-muted px-4 py-3 flex items-center gap-2">
+              <div className="bg-muted/30 backdrop-blur-sm px-4 py-3 flex items-center gap-2">
                 <Terminal className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm text-muted-foreground font-mono">
                   ~/sanjay
@@ -99,7 +99,7 @@ export function AboutSection() {
               </div>
 
               {/* Terminal Content */}
-              <div className="bg-card p-6 font-mono text-sm space-y-3">
+              <div className="bg-card/30 backdrop-blur-md p-6 font-mono text-sm space-y-3">
                 {terminalCommands.map((cmd, index) => (
                   <motion.div
                     key={index}

@@ -33,7 +33,7 @@ const codeSnippet = `public class SanjaySanthanam {
     private String university = "Syracuse University";
     
     public void buildAmazingThings() {
-        // Let's create something extraordinary!
+        // Let&apos;s create something extraordinary!
     }
 }`
 
@@ -61,7 +61,7 @@ export function HeroSection() {
               className="text-xl text-muted-foreground mb-8 max-w-2xl"
             >
               With over 4 years of experience building scalable applications with Java, Spring Boot, 
-              and modern web technologies. Holding a Master's degree in Computer Science from Syracuse University.
+              and modern web technologies. Holding a Master&apos;s degree in Computer Science from Syracuse University.
             </motion.p>
 
             <motion.div
@@ -100,7 +100,7 @@ export function HeroSection() {
                 href="https://github.com/Sanjays2402/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                className="p-3 rounded-full glass-badge hover:bg-muted/40 transition-all duration-300"
                 aria-label="GitHub Profile"
               >
                 <Github className="h-6 w-6" />
@@ -111,7 +111,7 @@ export function HeroSection() {
                 href="https://linkedin.com/in/sanjay24"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                className="p-3 rounded-full glass-badge hover:bg-muted/40 transition-all duration-300"
                 aria-label="LinkedIn Profile"
               >
                 <Linkedin className="h-6 w-6" />
@@ -120,7 +120,7 @@ export function HeroSection() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 href="mailto:sanjays2402@gmail.com"
-                className="p-3 rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                className="p-3 rounded-full glass-badge hover:bg-muted/40 transition-all duration-300"
                 aria-label="Email Contact"
               >
                 <Mail className="h-6 w-6" />
@@ -133,9 +133,9 @@ export function HeroSection() {
             variants={itemVariants}
             className="hidden lg:block"
           >
-            <div className="glass rounded-lg overflow-hidden shadow-2xl">
+            <div className="glass-card rounded-lg overflow-hidden shadow-2xl">
               {/* Window Header */}
-              <div className="bg-muted px-4 py-3 flex items-center gap-2">
+              <div className="bg-muted/30 backdrop-blur-sm px-4 py-3 flex items-center gap-2">
                 <div className="flex gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500"></div>
                   <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
@@ -147,7 +147,7 @@ export function HeroSection() {
               </div>
 
               {/* Code Content */}
-              <div className="p-6 bg-card font-mono text-sm overflow-x-auto">
+              <div className="p-6 bg-card/30 backdrop-blur-md font-mono text-sm overflow-x-auto">
                 <pre className="text-card-foreground">
                   <code>{codeSnippet}</code>
                 </pre>

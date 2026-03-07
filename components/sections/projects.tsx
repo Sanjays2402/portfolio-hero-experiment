@@ -59,7 +59,7 @@ const itemVariants = {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 bg-muted/30">
+    <section id="projects" className="py-20 glass-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -88,7 +88,7 @@ export function ProjectsSection() {
               key={index}
               variants={itemVariants}
               whileHover={{ y: -5, scale: 1.02 }}
-              className="group bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+              className="group glass-card rounded-lg p-6 shadow-lg hover:shadow-xl hover:bg-card/50 hover:border-white/20 transition-all duration-300"
             >
               {/* Project Header */}
               <div className="mb-4">
@@ -107,7 +107,7 @@ export function ProjectsSection() {
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 text-xs font-mono bg-muted text-muted-foreground rounded border border-border group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/20 transition-all duration-300"
+                    className="px-2 py-1 text-xs font-mono glass-badge text-muted-foreground rounded group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/20 transition-all duration-300"
                   >
                     {tech}
                   </span>

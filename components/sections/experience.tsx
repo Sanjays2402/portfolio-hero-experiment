@@ -97,7 +97,7 @@ export function ExperienceSection() {
               }`}>
                 <motion.div
                   whileHover={{ y: -5 }}
-                  className="bg-card border border-border rounded-lg p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="glass-card rounded-lg p-6 shadow-lg hover:shadow-xl hover:bg-card/50 hover:border-white/20 transition-all duration-300"
                 >
                   {/* Company & Period */}
                   <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
@@ -129,7 +129,7 @@ export function ExperienceSection() {
                     {experience.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-1 text-xs font-mono bg-muted text-muted-foreground rounded border border-border"
+                        className="px-2 py-1 text-xs font-mono glass-badge text-muted-foreground rounded"
                       >
                         {tech}
                       </span>
