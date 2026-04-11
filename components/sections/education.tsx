@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { GraduationCap, MapPin, Calendar } from 'lucide-react'
+import { GraduationCap, MapPin } from 'lucide-react'
 
 const education = [
   {
@@ -111,10 +111,7 @@ export function EducationSection() {
                   <MapPin className="h-4 w-4" />
                   <span>{edu.location}</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Calendar className="h-4 w-4" />
-                  <span>{edu.period}</span>
-                </div>
+
               </div>
 
               {/* Hover effect overlay */}
