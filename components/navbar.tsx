@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Moon, Sun, Menu, X } from 'lucide-react'
@@ -19,9 +20,11 @@ export function Navbar() {
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
+  const pathname = usePathname()
 
   useEffect(() => { setMounted(true) }, [])
   if (!mounted) return null
+  if (pathname?.startsWith('/editorial')) return null
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     setIsOpen(false)

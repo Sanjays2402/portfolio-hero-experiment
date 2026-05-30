@@ -13,6 +13,7 @@ const variants = [
   { slug: 'v2', label: 'Globe' },
   { slug: 'v3', label: 'Particles' },
   { slug: 'v4', label: 'Synthwave' },
+  { slug: 'editorial', label: 'Editorial' },
 ]
 
 export function PortfolioLayout({ hero, currentSlug }: { hero: ReactNode; currentSlug: string }) {

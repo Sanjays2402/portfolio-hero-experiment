@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
 import { Navbar } from '@/components/navbar'
@@ -13,6 +13,12 @@ const inter = Inter({
 const jetbrainsMono = JetBrains_Mono({ 
   subsets: ['latin'],
   variable: '--font-jetbrains-mono'
+})
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  variable: '--font-serif',
 })
 
 export const metadata: Metadata = {
@@ -42,7 +48,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -54,11 +60,13 @@ export default function RootLayout({
           <div className="glass-orb glass-orb-2" aria-hidden="true" />
           <div className="glass-orb glass-orb-3" aria-hidden="true" />
           <div className="gradient-bg fixed inset-0 -z-10" aria-hidden="true" />
-          <Navbar />
-          <main className="min-h-screen relative">
-            {children}
-          </main>
-          <BackToTop />
+          <div>
+            <Navbar />
+            <main className="min-h-screen relative">
+              {children}
+            </main>
+            <BackToTop />
+          </div>
         </ThemeProvider>
       </body>
     </html>

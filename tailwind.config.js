@@ -38,6 +38,7 @@ module.exports = {
         sans: ['Atkinson Hyperlegible', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
         dyslexic: ['Atkinson Hyperlegible', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Instrument Serif', 'Georgia', 'serif'],
       },
       animation: {
         'fade-up': 'fadeUp 0.5s ease-out',
