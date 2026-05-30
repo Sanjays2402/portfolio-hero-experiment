@@ -1,6 +1,7 @@
 import { HeroShell } from '@/components/heroes/hero-shell'
 import { HeroWireframe } from '@/components/heroes/hero-wireframe'
+import { PortfolioLayout } from '@/components/portfolio-layout'
 
 export default function V2() {
-  return <HeroShell centerpiece={<HeroWireframe />} variantLabel="Variant 02 — Wireframe Globe" />
+  return <PortfolioLayout currentSlug="v2" hero={<HeroShell centerpiece={<HeroWireframe />} />} />
 }

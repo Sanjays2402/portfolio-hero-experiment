@@ -1,6 +1,7 @@
 import { HeroShell } from '@/components/heroes/hero-shell'
 import { HeroOrb } from '@/components/hero-orb'
+import { PortfolioLayout } from '@/components/portfolio-layout'
 
 export default function V1() {
-  return <HeroShell centerpiece={<HeroOrb />} variantLabel="Variant 01 — Gradient Orb" />
+  return <PortfolioLayout currentSlug="v1" hero={<HeroShell centerpiece={<HeroOrb />} />} />
 }

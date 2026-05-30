@@ -7,11 +7,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 
 const navItems = [
-  { name: 'Gallery', href: '/' },
-  { name: 'Orb', href: '/v1' },
-  { name: 'Globe', href: '/v2' },
-  { name: 'Particles', href: '/v3' },
-  { name: 'Synthwave', href: '/v4' },
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Skills', href: '#skills' },
+  { name: 'Research', href: '#research' },
+  { name: 'Contact', href: '#contact' },
 ]
 
 export function Navbar() {
@@ -22,9 +23,10 @@ export function Navbar() {
   useEffect(() => { setMounted(true) }, [])
   if (!mounted) return null
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
     setIsOpen(false)
     if (href.startsWith('#')) {
+      e.preventDefault()
       document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
     }
   }
@@ -51,6 +53,7 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               className="px-4 py-1.5 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
             >
               {item.name}
@@ -69,16 +72,15 @@ export function Navbar() {
           </button>
 
           <a
-            href="https://github.com/Sanjays2402/portfolio-hero-experiment"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
           >
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 pulse-dot" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
             </span>
-            View Source
+            Let&rsquo;s Talk
           </a>
 
           <button
@@ -103,7 +105,7 @@ export function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                onClick={() => setIsOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="block px-5 py-3 text-sm font-medium text-foreground hover:bg-muted/40 border-b border-border/40 last:border-b-0"
               >
                 {item.name}
