@@ -7,162 +7,109 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 
 const navItems = [
-  { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
-  { name: 'Education', href: '#education' },
   { name: 'Research', href: '#research' },
-  { name: 'Contact', href: '#contact' },
 ]
 
 export function Navbar() {
   const [mounted, setMounted] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const { theme, setTheme } = useTheme()
 
-  useEffect(() => {
-    setMounted(true)
-    
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 100
-      setScrolled(isScrolled)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
+  useEffect(() => { setMounted(true) }, [])
+  if (!mounted) return null
 
   const handleNavClick = (href: string) => {
     setIsOpen(false)
     if (href.startsWith('#')) {
-      const element = document.querySelector(href)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
   return (
     <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? 'glass shadow-lg'
-          : 'bg-transparent backdrop-blur-none'
-      }`}
+      initial={{ y: -40, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+      className="fixed top-4 left-0 right-0 z-50 px-4"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex-shrink-0"
-          >
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Logo */}
+        <Link
+          href="#home"
+          onClick={() => handleNavClick('#home')}
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-background/70 backdrop-blur-xl border border-border/60 shadow-sm hover:border-foreground/30 transition-colors"
+        >
+          <span className="font-semibold tracking-tight text-sm">Sanjay Santhanam</span>
+        </Link>
+
+        {/* Centered pill */}
+        <div className="hidden md:flex items-center gap-1 px-2 py-1.5 rounded-full bg-background/70 backdrop-blur-xl border border-border/60 shadow-sm">
+          {navItems.map((item) => (
             <Link
-              href="#home"
-              onClick={() => handleNavClick('#home')}
-              className="text-xl font-bold text-foreground hover:text-primary transition-colors"
+              key={item.name}
+              href={item.href}
+              onClick={(e) => { e.preventDefault(); handleNavClick(item.href) }}
+              className="px-4 py-1.5 rounded-full text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/60 transition-colors"
             >
-              SANJAY <span className="text-muted-foreground">SANTHANAM</span>
+              {item.name}
             </Link>
-          </motion.div>
+          ))}
+        </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => handleNavClick(item.href)}
-                    className="relative text-foreground hover:text-primary px-3 py-2 text-sm font-medium transition-colors group"
-                  >
-                    {item.name}
-                    <span className="absolute inset-x-0 bottom-0 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+        {/* Right cluster */}
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="p-2.5 rounded-full bg-background/70 backdrop-blur-xl border border-border/60 hover:border-foreground/30 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {theme === 'dark' ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+          </button>
 
-          {/* Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-2">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-md hover:bg-muted transition-colors"
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="h-5 w-5" />
-              ) : (
-                <Moon className="h-5 w-5" />
-              )}
-            </motion.button>
+          <Link
+            href="#contact"
+            onClick={(e) => { e.preventDefault(); handleNavClick('#contact') }}
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-full bg-foreground text-background text-sm font-medium hover:opacity-90 transition-opacity"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 pulse-dot" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400" />
+            </span>
+            Let&rsquo;s Talk
+          </Link>
 
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2 rounded-md hover:bg-muted transition-colors"
-                aria-label="Toggle menu"
-              >
-                {isOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </motion.button>
-            </div>
-          </div>
+          <button
+            className="md:hidden p-2.5 rounded-full bg-background/70 backdrop-blur-xl border border-border/60"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden glass border-t border-border"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="md:hidden mt-2 max-w-7xl mx-auto rounded-2xl bg-background/90 backdrop-blur-xl border border-border/60 shadow-lg overflow-hidden"
           >
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              {navItems.map((item, index) => (
-                <motion.div
-                  key={item.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.1 }}
-                >
-                  <Link
-                    href={item.href}
-                    onClick={() => handleNavClick(item.href)}
-                    className="text-foreground hover:text-primary block px-3 py-2 text-base font-medium transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
+            {navItems.concat([{ name: 'Contact', href: '#contact' }]).map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={(e) => { e.preventDefault(); handleNavClick(item.href) }}
+                className="block px-5 py-3 text-sm font-medium text-foreground hover:bg-muted/40 border-b border-border/40 last:border-b-0"
+              >
+                {item.name}
+              </Link>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
