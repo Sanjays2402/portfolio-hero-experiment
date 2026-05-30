@@ -1,16 +1,14 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+const repo = 'portfolio-hero-experiment'
+
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  images: {
-    unoptimized: true
-  },
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-  // For username.github.io repositories, no basePath needed
-  // basePath: process.env.NODE_ENV === 'production' ? '/sanjays2402' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/sanjays2402/' : '',
+  images: { unoptimized: true },
+  typescript: { ignoreBuildErrors: false },
+  basePath: isProd ? `/${repo}` : '',
+  assetPrefix: isProd ? `/${repo}/` : '',
 }
 
 module.exports = nextConfig
