@@ -8,6 +8,11 @@ const variants = [
   { slug: 'v2',        name: 'Terminal',   sub: 'CRT, command-line, history', accent: 'from-emerald-300 via-emerald-400 to-emerald-300' },
   { slug: 'v3',        name: 'Brutalist',  sub: 'Yellow, black, no mercy',    accent: 'from-yellow-400 via-yellow-300 to-yellow-400' },
   { slug: 'v4',        name: 'Synthwave',  sub: 'Outrun grid, neon glow',     accent: 'from-pink-400 via-purple-400 to-cyan-300' },
+  { slug: 'v5',        name: 'Blueprint',  sub: 'Drawing No. SS-2026',        accent: 'from-cyan-300 via-sky-400 to-blue-500' },
+  { slug: 'v6',        name: 'Zine',       sub: 'Halftone comic, hand-stapled', accent: 'from-yellow-300 via-pink-400 to-rose-500' },
+  { slug: 'v7',        name: 'Museum',     sub: 'Spotlit, serif, hushed',     accent: 'from-amber-200 via-amber-300 to-stone-500' },
+  { slug: 'v8',        name: 'Y2K Aero',   sub: 'Frutiger Metro · 2003',      accent: 'from-sky-300 via-blue-400 to-pink-300' },
+  { slug: 'v9',        name: 'Boarding',   sub: 'Sanjay Air · JAI → SEA',     accent: 'from-amber-100 via-stone-300 to-amber-200' },
   { slug: 'editorial', name: 'Editorial',  sub: 'Magazine spread, serif',     accent: 'from-stone-200 via-stone-100 to-amber-100' },
 ]
 
@@ -17,11 +22,11 @@ export default function Home() {
       <header className="max-w-6xl">
         <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-white/50 mb-4">Portfolio Hero Experiment</div>
         <h1 className="text-5xl lg:text-7xl font-semibold tracking-tight leading-none">
-          Five complete portfolios.<br/>
+          Ten complete portfolios.<br/>
           <span className="text-white/40">One person.</span>
         </h1>
         <p className="mt-6 text-lg text-white/65 max-w-2xl">
-          Same data, five totally different design languages. Each route is a self-contained site — no shared shell, no shared components. Pick one.
+          Same data, ten totally different design languages. Each route is a self-contained site — no shared shell, no shared components. Pick one.
         </p>
       </header>
 

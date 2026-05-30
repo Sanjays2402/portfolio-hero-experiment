@@ -7,6 +7,11 @@ const variants = [
   { slug: 'v2',        label: 'Terminal' },
   { slug: 'v3',        label: 'Brutalist' },
   { slug: 'v4',        label: 'Synthwave' },
+  { slug: 'v5',        label: 'Blueprint' },
+  { slug: 'v6',        label: 'Zine' },
+  { slug: 'v7',        label: 'Museum' },
+  { slug: 'v8',        label: 'Y2K' },
+  { slug: 'v9',        label: 'Boarding' },
   { slug: 'editorial', label: 'Editorial' },
 ]
 
