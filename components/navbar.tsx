@@ -24,7 +24,8 @@ export function Navbar() {
 
   useEffect(() => { setMounted(true) }, [])
   if (!mounted) return null
-  if (pathname?.startsWith('/editorial')) return null
+  const hideChrome = ['/editorial', '/v1', '/v2', '/v3', '/v4'].some(p => pathname?.startsWith(p))
+  if (hideChrome) return null
 
   const handleNavClick = (e: React.MouseEvent, href: string) => {
     setIsOpen(false)

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { VariantSwitcher } from '@/components/variant-switcher'
 
 const sections = [
   { num: '01', label: 'Index',       id: 'index' },
@@ -235,6 +236,7 @@ export default function EditorialPage() {
           </section>
         </main>
       </div>
+      <VariantSwitcher current="editorial" dark={false} />
     </div>
   )
 }
