@@ -82,23 +82,23 @@ export function HeroShell({ centerpiece, variantLabel }: Props) {
             className="flex flex-col sm:flex-row gap-3 justify-center items-center"
           >
             <Link
-              href="#projects"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }) }}
+              href="/"
               className="group inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-medium hover:opacity-90 transition-opacity"
             >
-              View Work
+              Back to Gallery
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </Link>
-            <Link
-              href="#about"
-              onClick={(e) => { e.preventDefault(); document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth' }) }}
+            <a
+              href="https://github.com/Sanjays2402/portfolio-hero-experiment"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-foreground hover:bg-muted/40 transition-colors"
             >
               <span className="flex items-center justify-center w-6 h-6 rounded-full border border-foreground/40 group-hover:border-foreground transition-colors">
                 <Play className="h-3 w-3 fill-current ml-0.5" />
               </span>
-              My Story
-            </Link>
+              View Source
+            </a>
           </motion.div>
 
           <motion.div
