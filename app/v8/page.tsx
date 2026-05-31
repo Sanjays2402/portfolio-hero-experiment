@@ -195,6 +195,23 @@ export default function Y2K() {
         </div>
       </Section>
 
+      {/* EDUCATION — Schools.txt notepad */}
+      <Section id="education" title="Schools attended" sub="Saved as `schools.txt` · readme inside">
+        <Window title="schools.txt — Notepad" subtitle="Word wrap: On">
+          <div className="p-6 font-mono text-sm bg-white space-y-4">
+            {education.map((e, i) => (
+              <div key={e.degree} className="border-l-4 border-blue-500 pl-4 py-1">
+                <div className="text-[10px] tracking-widest text-blue-700 uppercase">{`// School ${i+1} of ${education.length}`}</div>
+                <div className="text-slate-900 font-bold mt-1">{e.school}</div>
+                <div className="text-slate-700 mt-0.5">{e.degree}</div>
+                <div className="text-slate-500 text-[11px] mt-1">{e.period} — {e.location}</div>
+              </div>
+            ))}
+            <div className="text-[10px] text-slate-400 pt-3 border-t">— EOF —</div>
+          </div>
+        </Window>
+      </Section>
+
       {/* CONTACT — Buddy List */}
       <Section id="contact" title="Add me!" sub="Online · Status: looking for cool stuff to build">
         <Window title="Sanjay's Buddy List — MSN Messenger" subtitle="Online">

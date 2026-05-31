@@ -112,6 +112,22 @@ export default function V11() {
 
           <div className="my-2 text-[12px]">{SEP}</div>
 
+          <div className="my-2 text-[12px]">{SEP}</div>
+
+          {/* EDUCATION LINE ITEMS */}
+          <div className="text-[12px] font-bold uppercase">— SCHOOLS · CERTIFIED —</div>
+          <div className="mt-1 space-y-0.5">
+            {education.map((e, i) => (
+              <div key={e.degree}>
+                <Row l={`${(i+1).toString().padStart(2,'0')} ${e.school.toUpperCase().slice(0,28)}`} r={e.year.toString()} />
+                <div className="text-[11px] pl-3 opacity-80">{e.degree.slice(0,38)}</div>
+                <div className="text-[11px] pl-3 opacity-60">{e.location} · {e.period}</div>
+              </div>
+            ))}
+          </div>
+
+          <div className="my-2 text-[12px]">{SEP}</div>
+
           {/* TOTALS */}
           <Row l={`SUBTOTAL`}              r={`$${(7842.50).toFixed(2)}`} />
           <Row l={`COFFEE SURCHARGE (15%)`} r={`$  1176.38`} />

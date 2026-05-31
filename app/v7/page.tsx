@@ -158,8 +158,23 @@ export default function Museum() {
         </div>
       </Room>
 
-      {/* VI — CORRESPONDENCE */}
-      <Room number="VI" title="Correspondence" subtitle="Inquiries welcomed by post, by wire, or by network" last>
+      {/* VI — PROVENANCE */}
+      <Room number="VI" title="Provenance & Training" subtitle="The institutions that shaped the artist's hand">
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {education.map((e, i) => (
+            <div key={e.degree} className="text-center border border-amber-200/20 p-8 bg-stone-900/40">
+              <div className="text-amber-200/60 italic text-sm tracking-wider">— {['Primary','Subsequent'][i] || `№ ${i+1}`} Tutelage —</div>
+              <Ornament />
+              <div className="text-amber-100 italic text-2xl font-light mt-4 leading-tight">{e.school}</div>
+              <div className="text-stone-300 text-sm italic mt-3">{e.degree}</div>
+              <div className="text-amber-200/60 text-xs tracking-widest uppercase mt-4">{e.period} · {e.location}</div>
+            </div>
+          ))}
+        </div>
+      </Room>
+
+      {/* VII — CORRESPONDENCE */}
+      <Room number="VII" title="Correspondence" subtitle="Inquiries welcomed by post, by wire, or by network" last>
         <div className="text-center max-w-2xl mx-auto">
           <Ornament />
           <p className="italic font-light text-2xl text-stone-200 leading-relaxed mt-6">

@@ -193,6 +193,21 @@ export default function SynthwaveVariant() {
         </div>
       </section>
 
+      {/* CHARACTER SELECT — education */}
+      <section className="relative px-6 py-24 bg-black/60 border-b border-fuchsia-500/40">
+        <SectionHeader sub="CHARACTER SELECT" title="Training Academies" tone="yellow" />
+        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+          {education.map((e, i) => (
+            <div key={e.degree} className="relative p-6 border-2 border-fuchsia-500/60 bg-gradient-to-br from-fuchsia-900/20 to-cyan-900/20" style={{ boxShadow: '0 0 40px rgba(217,70,239,0.25), inset 0 0 20px rgba(34,211,238,0.15)' }}>
+              <div className="text-[10px] tracking-[0.4em] uppercase text-cyan-300 mb-1">LV.{i+1} · {e.year}</div>
+              <div className="text-2xl font-bold uppercase text-yellow-300 leading-tight" style={{ textShadow: '0 0 12px rgba(253,224,71,0.6)' }}>{e.school}</div>
+              <div className="text-sm text-fuchsia-200 mt-2 italic">{e.degree}</div>
+              <div className="text-[11px] text-cyan-300/80 mt-2 tracking-wider uppercase">{e.location} · {e.period}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CONTINUE? */}
       <section id="contact" className="relative px-6 py-32 bg-black/80 text-center">
         <div className="text-yellow-300 tracking-[0.4em] text-xs mb-6 animate-pulse">— GAME OVER —</div>

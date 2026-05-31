@@ -120,6 +120,23 @@ export default function BoardingPass() {
         </div>
       </Section>
 
+      {/* EDUCATION — Issuing Authorities */}
+      <Section eyebrow="Issuing Authorities" title="Credentials & training">
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {education.map((e, i) => (
+            <div key={e.degree} className="bg-stone-50/95 border border-stone-400/40 p-6 relative" style={{ boxShadow: '0 1px 0 rgba(0,0,0,0.08), 0 6px 18px rgba(0,0,0,0.12)' }}>
+              <div className="absolute top-3 right-3 text-[9px] font-mono tracking-widest text-stone-500 border border-stone-400/40 px-2 py-0.5 rounded-sm">CERT №{(i+1).toString().padStart(3,'0')}</div>
+              <div className="text-[10px] font-mono tracking-[0.3em] uppercase text-stone-500">Issuing Authority</div>
+              <div className="text-stone-900 text-xl font-semibold mt-1 leading-tight">{e.school}</div>
+              <div className="text-stone-700 text-sm italic mt-2">{e.degree}</div>
+              <div className="mt-4 pt-3 border-t border-dashed border-stone-400/50 flex justify-between text-[11px] font-mono uppercase tracking-wider text-stone-600">
+                <span>{e.location}</span><span>{e.period}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
       {/* CONTACT */}
       <Section eyebrow="Customs Form" title="Declarations & contact">
         <div className="bg-white/85 border border-stone-400/40 p-8 max-w-3xl mx-auto relative">

@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { VariantSwitcher } from '@/components/variant-switcher'
-import { research, stats } from '@/lib/portfolio-data'
+import { education, research, stats } from '@/lib/portfolio-data'
 
 const sections = [
   { num: '01', label: 'Index',       id: 'index' },
@@ -13,7 +13,8 @@ const sections = [
   { num: '05', label: 'Instruments', id: 'instruments' },
   { num: '06', label: 'Notes',       id: 'notes' },
   { num: '07', label: 'Citations',   id: 'citations' },
-  { num: '08', label: 'Address',     id: 'address' },
+  { num: '08', label: 'Schooling',   id: 'schooling' },
+  { num: '09', label: 'Address',     id: 'address' },
 ]
 
 const citations = research.map(r => ({
@@ -237,9 +238,23 @@ export default function EditorialPage() {
             </ol>
           </Spread>
 
+          {/* SCHOOLING */}
+          <Spread num="08" title="Schooling">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-8">
+              {education.map((e, i) => (
+                <article key={e.degree} className="border-t-2 border-[#111] pt-6">
+                  <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/60">№ {(i+1).toString().padStart(2,'0')} · {e.period}</div>
+                  <h3 className="font-serif text-3xl md:text-4xl leading-[0.95] mt-3">{e.school}</h3>
+                  <p className="font-serif italic text-lg text-[#111]/80 mt-3 leading-snug">{e.degree}</p>
+                  <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/60 mt-4">{e.location}</div>
+                </article>
+              ))}
+            </div>
+          </Spread>
+
           {/* ADDRESS */}
           <section id="address" className="pt-24 pb-32 border-t border-[#111]/40">
-            <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/60 mb-6">No. 08 · Address</div>
+            <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/60 mb-6">No. 09 · Address</div>
             <h2 className="font-serif text-[12vw] lg:text-[140px] leading-[0.88] tracking-tight">
               Write to me<span className="text-[#111]/40">.</span>
             </h2>

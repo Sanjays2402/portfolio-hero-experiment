@@ -168,6 +168,29 @@ export default function Zine() {
           <PageNumber n="05" />
         </Panel>
 
+        {/* SCHOOLING PAGE — education zine */}
+        <Panel rotate="-0.5deg" bg="#fef3c7">
+          <Staple style={{ top: -4, left: '15%' }} />
+          <div className="relative px-6 py-10">
+            <div className="text-[10px] uppercase tracking-[0.4em] mb-1 opacity-70">Chapter 06</div>
+            <h2 className="font-black uppercase text-4xl md:text-5xl leading-none mb-6">Schooling.</h2>
+            <div className="space-y-5">
+              {education.map((e, i) => (
+                <div key={e.degree} className="border-l-4 border-black pl-4 bg-white/60 py-3 pr-3" style={{ boxShadow: '4px 4px 0 #000' }}>
+                  <div className="flex items-baseline justify-between gap-3">
+                    <div className="text-[10px] font-black uppercase tracking-[0.3em]">№ {i+1}</div>
+                    <div className="text-[10px] font-bold uppercase">{e.period}</div>
+                  </div>
+                  <div className="font-black uppercase text-lg leading-tight mt-1">{e.school}</div>
+                  <div className="text-sm italic mt-1">{e.degree}</div>
+                  <div className="text-[10px] uppercase tracking-wider mt-1 opacity-70">{e.location}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <PageNumber n="06" />
+        </Panel>
+
         {/* BACK COVER — contact */}
         <Panel rotate="-0.4deg" bg="#fde047">
           <Staple style={{ top: -4, left: '12%' }} />

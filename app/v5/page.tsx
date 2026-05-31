@@ -143,8 +143,24 @@ export default function Blueprint() {
           </div>
         </Cell>
 
-        {/* CONTACT — Sheet F */}
-        <Cell zone="F1" title="Channels · Initiate Contact" last>
+        {/* EDUCATION — Sheet F */}
+        <Cell zone="F1" title="Index · Training & Credentials">
+          <div className="space-y-3">
+            {education.map((e, i) => (
+              <div key={e.degree} className="border border-cyan-300/40 p-4 bg-[#0a1f3a]/60">
+                <div className="flex items-baseline justify-between gap-4 text-[10px] tracking-[0.3em] text-cyan-300/70 uppercase">
+                  <span>F.{i+1}</span><span>{e.period}</span>
+                </div>
+                <div className="text-cyan-100 text-sm mt-1 font-semibold">{e.school}</div>
+                <div className="text-cyan-200/90 text-[12px] mt-1 normal-case tracking-normal" style={{ fontFamily: 'ui-sans-serif' }}>{e.degree}</div>
+                <div className="text-cyan-300/60 text-[10px] mt-1 tracking-wider uppercase">{e.location}</div>
+              </div>
+            ))}
+          </div>
+        </Cell>
+
+        {/* CONTACT — Sheet G */}
+        <Cell zone="G1" title="Channels · Initiate Contact" last>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-cyan-300/30 border border-cyan-300/40">
             {[
               { k: 'MAIL', v: profile.email,                href: `mailto:${profile.email}` },
@@ -176,8 +192,8 @@ function Sheet({ children }: { children: React.ReactNode }) {
       <div className="relative border-2 border-cyan-300/70 p-3 md:p-5">
         <div className="border border-cyan-300/40 relative">
           {/* Zone markers — top */}
-          <ZoneStrip orientation="top"    items={['A','B','C','D','E','F']} />
-          <ZoneStrip orientation="bottom" items={['A','B','C','D','E','F']} />
+          <ZoneStrip orientation="top"    items={['A','B','C','D','E','F','G']} />
+          <ZoneStrip orientation="bottom" items={['A','B','C','D','E','F','G']} />
           <ZoneStrip orientation="left"   items={['1','2','3','4','5']} />
           <ZoneStrip orientation="right"  items={['1','2','3','4','5']} />
 
