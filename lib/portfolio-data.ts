@@ -147,6 +147,6 @@ export const skills = {
 }
 
 export const education = [
-  { degree: 'MS in Computer Science', school: 'Syracuse University', location: 'Syracuse, NY', period: 'Aug 2022 — May 2024', year: '2024' },
-  { degree: 'BE in Computer Science', school: 'Anna University', location: 'Chennai, IN', period: 'Aug 2018 — Apr 2022', year: '2022' },
+  { degree: 'Master of Science in Computer Science', school: 'Syracuse University', location: 'Syracuse, NY', period: 'Aug 2022 — May 2024', year: '2024' },
+  { degree: 'Bachelor of Engineering in Computer Science and Engineering', school: 'Anna University', location: 'Chennai, IN', period: 'Aug 2018 — Apr 2022', year: '2022' },
 ]
