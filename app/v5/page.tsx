@@ -1,7 +1,7 @@
 'use client'
 // V5 — BLUEPRINT (rebuilt): real schematic linework, sheet border, zone markers,
 // title block, dimensioned hero, isometric project diagrams, hatched fills
-import { profile, experience, projects, skills } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 const INK = '#7dd3fc'
@@ -122,8 +122,29 @@ export default function Blueprint() {
           </div>
         </Cell>
 
-        {/* CONTACT — Sheet E */}
-        <Cell zone="E1" title="Channels · Initiate Contact" last>
+        {/* RESEARCH — Sheet E — published findings */}
+        <Cell zone="E1" title={`Field Notes · Published Research · ${stats.publications}/${stats.citations} cites`}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-cyan-300/30 border border-cyan-300/40">
+            {research.map((r, i) => (
+              <div key={i} className="bg-[#0a1f3a] p-5 relative">
+                <div className="absolute top-3 right-3 text-right">
+                  <div className="text-2xl font-bold tabular-nums normal-case tracking-tight">{r.citations}</div>
+                  <div className="text-[9px] tracking-[0.3em] uppercase opacity-60">cites</div>
+                </div>
+                <div className="flex items-center gap-2 mb-3">
+                  <HatchSwatch variant={i % 4} />
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-cyan-300">{r.type} · {r.year}</span>
+                </div>
+                <div className="text-base font-bold normal-case tracking-normal text-cyan-50 leading-snug" style={{ fontFamily: 'ui-sans-serif' }}>{r.title}</div>
+                <div className="mt-2 text-[11px] text-cyan-200/70 italic normal-case tracking-normal" style={{ fontFamily: 'ui-sans-serif' }}>{r.authors}</div>
+                <div className="mt-1 text-[11px] text-cyan-300/80 normal-case tracking-normal" style={{ fontFamily: 'ui-sans-serif' }}>{r.venue}</div>
+              </div>
+            ))}
+          </div>
+        </Cell>
+
+        {/* CONTACT — Sheet F */}
+        <Cell zone="F1" title="Channels · Initiate Contact" last>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-cyan-300/30 border border-cyan-300/40">
             {[
               { k: 'MAIL', v: profile.email,                href: `mailto:${profile.email}` },
@@ -155,8 +176,8 @@ function Sheet({ children }: { children: React.ReactNode }) {
       <div className="relative border-2 border-cyan-300/70 p-3 md:p-5">
         <div className="border border-cyan-300/40 relative">
           {/* Zone markers — top */}
-          <ZoneStrip orientation="top"    items={['A','B','C','D','E']} />
-          <ZoneStrip orientation="bottom" items={['A','B','C','D','E']} />
+          <ZoneStrip orientation="top"    items={['A','B','C','D','E','F']} />
+          <ZoneStrip orientation="bottom" items={['A','B','C','D','E','F']} />
           <ZoneStrip orientation="left"   items={['1','2','3','4','5']} />
           <ZoneStrip orientation="right"  items={['1','2','3','4','5']} />
 

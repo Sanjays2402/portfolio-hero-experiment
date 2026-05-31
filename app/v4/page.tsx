@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 function GridCanvas() {
@@ -171,6 +171,24 @@ export default function SynthwaveVariant() {
                 {items.map(s => <span key={s} className="px-2 py-1 text-xs border border-pink-500/60 text-pink-200 bg-pink-500/10">{s}</span>)}
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* RESEARCH — BONUS STAGE */}
+      <section className="relative px-6 py-24 bg-black/70 backdrop-blur-sm border-b border-yellow-400/40">
+        <SectionHeader sub={`BONUS STAGE · ${stats.publications} PAPERS · ${stats.citations} CITES`} title="Research Logs" tone="yellow" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {research.map((r, i) => (
+            <article key={i} className="border-2 border-yellow-300 bg-black/70 p-5 relative shadow-[6px_6px_0_0_#ec4899] hover:translate-x-1 hover:translate-y-1 hover:shadow-[2px_2px_0_0_#ec4899] transition">
+              <div className="flex items-center justify-between text-[10px] tracking-[0.3em] uppercase mb-2">
+                <span className="text-cyan-300">▶ {r.type.toUpperCase()} · {r.year}</span>
+                <span className="text-pink-300">CITES × {r.citations}</span>
+              </div>
+              <h3 className="text-lg font-bold text-yellow-200 leading-snug">{r.title}</h3>
+              <div className="mt-2 text-cyan-100/70 text-[11px] italic">{r.authors}</div>
+              <div className="mt-1 text-pink-200/80 text-xs">{r.venue}</div>
+            </article>
           ))}
         </div>
       </section>

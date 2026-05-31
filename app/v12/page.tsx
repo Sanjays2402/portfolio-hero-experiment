@@ -1,5 +1,5 @@
 'use client'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 /* ─────────────  V12 · SUBWAY MAP  ─────────────
@@ -10,11 +10,12 @@ const LINES = {
   career: { name: 'CAREER LINE',   color: '#ee352e', stops: experience.map(e => ({ id: e.company, label: e.company, sub: `${e.role} · ${e.period}`, body: e.blurb })) },
   ship:   { name: 'SHIP LINE',     color: '#0039a6', stops: projects.map(p => ({ id: p.title, label: p.title, sub: p.stack.join(' · '), body: p.blurb })) },
   craft:  { name: 'CRAFT LINE',    color: '#00933c', stops: Object.entries(skills).map(([k,v]) => ({ id: k, label: k, sub: `${(v as string[]).length} tools`, body: (v as string[]).join(' · ') })) },
+  paper:  { name: 'RESEARCH LINE', color: '#b933ad', stops: research.map(r => ({ id: r.title, label: r.title.length > 28 ? r.title.slice(0,26) + '…' : r.title, sub: `${r.venue} · ${r.year}`, body: `${r.authors} — cited ${r.citations}×` })) },
   learn:  { name: 'LEARNING LINE', color: '#ff6319', stops: education.map(e => ({ id: e.degree, label: e.degree, sub: e.school, body: `Graduated ${e.year}` })) },
 } as const
 
 type LineKey = keyof typeof LINES
-const LINE_ORDER: LineKey[] = ['career', 'ship', 'craft', 'learn']
+const LINE_ORDER: LineKey[] = ['career', 'ship', 'craft', 'paper', 'learn']
 
 const STATION_GAP = 240
 const LINE_GAP = 130

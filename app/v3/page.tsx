@@ -1,6 +1,6 @@
 'use client'
 
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 export default function BrutalistVariant() {
@@ -100,7 +100,25 @@ export default function BrutalistVariant() {
 
       {/* EDUCATION */}
       <section className="border-b-[3px] border-black">
-        <Heading num="05" title="Schooling" right="" />
+        <Heading num="05" title="Research" right={`${stats.publications} papers · ${stats.citations} citations`} />
+        {research.map((r, i) => (
+          <div key={i} className="grid grid-cols-12 border-t-[3px] border-black">
+            <div className="col-span-2 px-4 py-5 border-r-[3px] border-black font-mono text-sm">
+              <div className="font-black text-3xl leading-none">{r.citations}</div>
+              <div className="uppercase tracking-wider opacity-70 mt-1">cites · {r.year}</div>
+            </div>
+            <div className="col-span-10 px-4 py-5">
+              <div className="text-xl md:text-2xl font-black uppercase leading-tight">{r.title}</div>
+              <div className="font-mono text-xs uppercase tracking-wider mt-2 opacity-80">{r.venue} — {r.type}</div>
+              <div className="font-mono text-xs mt-1 opacity-60">{r.authors}</div>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* EDUCATION */}
+      <section className="border-b-[3px] border-black">
+        <Heading num="06" title="Schooling" right="" />
         {education.map((e, i) => (
           <div key={i} className="grid grid-cols-12 border-t-[3px] border-black">
             <div className="col-span-2 px-4 py-5 border-r-[3px] border-black font-mono text-sm">{e.year}</div>

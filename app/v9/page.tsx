@@ -1,7 +1,7 @@
 'use client'
 // V9 — BOARDING PASS (rebuilt): real SVG perforation cutouts, real barcode,
 // departure board section, baggage tags with string holes, route arc on globe
-import { profile, experience, projects, skills } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 const today = new Date()
@@ -95,6 +95,26 @@ export default function BoardingPass() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* RESEARCH — passport stamps */}
+      <Section eyebrow="Passport · Visa Pages" title="Published research stamps">
+        <div className="text-center text-[11px] tracking-[0.3em] uppercase text-stone-600 -mt-4 mb-6">{stats.publications} entry stamps · {stats.citations}+ total citations</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {research.map((r, i) => (
+            <div key={i} className="bg-white/80 border border-stone-400/40 p-6 relative overflow-hidden" style={{ transform: `rotate(${(i%2?-0.6:0.6)}deg)` }}>
+              <div className="absolute -top-2 -right-2 pointer-events-none">
+                <Stamp text={`CITED ${r.citations}×`} rotate={`${(i%2?6:-6)}deg`} color="#7c2d12" />
+              </div>
+              <div className="text-[10px] tracking-[0.3em] uppercase text-stone-600">{r.type} · {r.year}</div>
+              <h3 className="font-serif italic text-xl md:text-2xl text-stone-900 mt-2 leading-snug" style={{ fontFamily: '"Cormorant Garamond", serif' }}>{r.title}</h3>
+              <div className="mt-3 pt-3 border-t border-dashed border-stone-300 text-xs">
+                <div className="text-stone-700 italic">{r.authors}</div>
+                <div className="text-stone-600 mt-1 tracking-wide">{r.venue}</div>
+              </div>
             </div>
           ))}
         </div>

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { Github, Mail, Linkedin, ArrowUpRight } from 'lucide-react'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { profile, experience, projects, skills, education, research, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 function AuroraCanvas() {
@@ -149,6 +149,39 @@ export default function GlassVariant() {
                   <span key={s} className="px-3 py-1.5 rounded-full text-xs bg-white/[0.06] border border-white/10">{s}</span>
                 ))}
               </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Research */}
+      <Section id="research" eyebrow={`Research · ${stats.publications} pubs · ${stats.citations} citations`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {research.map((r, i) => (
+            <article key={i} className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl">
+              <div className="flex items-start justify-between gap-3">
+                <div className="font-mono text-[10px] tracking-[0.25em] uppercase text-white/45">{r.type} · {r.year}</div>
+                <div className="text-right">
+                  <div className="text-xl font-semibold tabular-nums">{r.citations}</div>
+                  <div className="text-[9px] uppercase tracking-wider text-white/50">cites</div>
+                </div>
+              </div>
+              <h3 className="text-base font-semibold mt-3 leading-snug">{r.title}</h3>
+              <div className="text-xs text-white/55 mt-2 italic">{r.authors}</div>
+              <div className="text-xs text-white/65 mt-1">{r.venue}</div>
+            </article>
+          ))}
+        </div>
+      </Section>
+
+      {/* Education */}
+      <Section id="education" eyebrow="Education">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {education.map(ed => (
+            <div key={ed.school} className="p-6 rounded-2xl bg-white/[0.04] border border-white/10 backdrop-blur-xl">
+              <div className="text-xs text-white/55 font-mono uppercase tracking-wider">{ed.period}</div>
+              <div className="text-xl font-semibold mt-2">{ed.degree}</div>
+              <div className="text-sm text-white/65">{ed.school} · {ed.location}</div>
             </div>
           ))}
         </div>

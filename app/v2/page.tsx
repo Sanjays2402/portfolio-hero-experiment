@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 const PROMPT = 'sanjay@portfolio:~$ '
@@ -24,6 +24,9 @@ const intro: Line[] = [
   { txt: PROMPT + 'history | tail -3', cls: 'text-emerald-300' },
   ...experience.map((e, i) => ({ txt: `  ${(experience.length - i).toString().padStart(3, ' ')}  ${e.period.padEnd(22)} ${e.company.padEnd(22)} ${e.role}` })),
   { txt: '' },
+  { txt: PROMPT + 'papers --count', cls: 'text-emerald-300' },
+  { txt: `${stats.publications} publications · ${stats.citations} total citations · type \`papers\` for details`, cls: 'text-emerald-100/70' },
+  { txt: '' },
   { txt: PROMPT + 'type "help" for commands · "open" + n° to view a project', cls: 'text-emerald-300/70' },
 ]
 
@@ -36,6 +39,7 @@ const commands: Record<string, (arg?: string) => Line[]> = {
     { txt: '  exp          — work history' },
     { txt: '  skills       — tech stack by category' },
     { txt: '  edu          — education' },
+    { txt: '  papers       — published research' },
     { txt: '  contact      — how to reach me' },
     { txt: '  clear        — clear the buffer' },
     { txt: '  sudo hire    — try it' },
@@ -53,6 +57,15 @@ const commands: Record<string, (arg?: string) => Line[]> = {
     { txt: '  ' + items.join(' · ') },
   ]),
   edu: () => education.map(e => ({ txt: `${e.year}  ${e.degree}  —  ${e.school}` })),
+  papers: () => [
+    { txt: `── publications · ${stats.publications} papers · ${stats.citations} citations ──`, cls: 'text-emerald-300' },
+    ...research.flatMap(r => [
+      { txt: `[${r.year}] ${r.title}`, cls: 'text-emerald-100' },
+      { txt: `       ${r.authors}`, cls: 'text-emerald-200/70' },
+      { txt: `       ${r.venue} · ${r.type} · cited ${r.citations}×`, cls: 'text-emerald-300/60' },
+      { txt: '' },
+    ]),
+  ],
   contact: () => [
     { txt: 'email    ' + profile.email, cls: 'text-emerald-200' },
     { txt: 'github   github.com/' + profile.github },

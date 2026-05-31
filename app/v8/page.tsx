@@ -2,7 +2,7 @@
 // V8 — Y2K AERO (rebuilt): real SVG glass orbs with specular highlights,
 // XP-style window chrome with title bars + min/max/close,
 // Bliss-like sky+hill background, glassy buddy list
-import { profile, experience, projects, skills } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 export default function Y2K() {
@@ -167,6 +167,28 @@ export default function Y2K() {
                     {s}
                   </span>
                 ))}
+              </div>
+            </GlassPanel>
+          ))}
+        </div>
+      </Section>
+
+      {/* RESEARCH — published papers as CDs */}
+      <Section id="research" title="My research papers" sub={`Burned to disc · ${stats.publications} CDs · ${stats.citations}+ citations`}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {research.map((r, i) => (
+            <GlassPanel key={i} title={`Track ${String(i+1).padStart(2,'0')} · ${r.year}`}>
+              <div className="p-5 flex gap-4 items-start">
+                <div className="shrink-0 size-20 rounded-full relative grid place-items-center"
+                     style={{ background: `conic-gradient(from 0deg, hsl(${i*70},85%,75%), hsl(${i*70+90},85%,70%), hsl(${i*70+180},85%,75%), hsl(${i*70+270},85%,70%), hsl(${i*70},85%,75%))`, boxShadow: 'inset 0 0 0 4px rgba(255,255,255,0.6), 0 4px 12px rgba(0,0,0,0.15)' }}>
+                  <div className="size-7 rounded-full bg-white border-2 border-slate-200" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">{r.type} · cited {r.citations}×</div>
+                  <div className="font-bold text-slate-900 leading-snug mt-1">{r.title}</div>
+                  <div className="text-xs text-slate-600 italic mt-1">{r.authors}</div>
+                  <div className="text-xs text-blue-700 mt-1">{r.venue}</div>
+                </div>
               </div>
             </GlassPanel>
           ))}

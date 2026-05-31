@@ -1,5 +1,5 @@
 'use client'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 /* ───────────────────────────  V10 · NEWSPAPER  ───────────────────────────
@@ -157,6 +157,19 @@ export default function V10() {
                 <li key={ed.degree} className="border-b border-dashed border-[#1a1a1a]/30 pb-2">
                   <div className="font-bold">{ed.degree}</div>
                   <div className="italic opacity-75">{ed.school}, {ed.year}</div>
+                </li>
+              ))}
+            </ul>
+
+            <div className="text-[10px] uppercase tracking-[0.25em] font-bold border-b border-[#1a1a1a] pb-1 mt-5">
+              Cited in the Literature · {stats.publications} papers · {stats.citations}+ citations
+            </div>
+            <ul className="mt-2 space-y-2">
+              {research.map((r, i) => (
+                <li key={i} className="border-b border-dashed border-[#1a1a1a]/30 pb-2">
+                  <div className="font-bold leading-tight">{r.title}</div>
+                  <div className="italic text-[11px] opacity-80">{r.authors}</div>
+                  <div className="text-[11px] opacity-70">{r.venue} · {r.year} · cited {r.citations}×</div>
                 </li>
               ))}
             </ul>

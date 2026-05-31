@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { VariantSwitcher } from '@/components/variant-switcher'
+import { research, stats } from '@/lib/portfolio-data'
 
 const sections = [
   { num: '01', label: 'Index',       id: 'index' },
@@ -11,8 +12,13 @@ const sections = [
   { num: '04', label: 'Artifacts',   id: 'artifacts' },
   { num: '05', label: 'Instruments', id: 'instruments' },
   { num: '06', label: 'Notes',       id: 'notes' },
-  { num: '07', label: 'Address',     id: 'address' },
+  { num: '07', label: 'Citations',   id: 'citations' },
+  { num: '08', label: 'Address',     id: 'address' },
 ]
+
+const citations = research.map(r => ({
+  yr: r.year, title: r.title, venue: r.venue, cites: r.citations
+}))
 
 const ledger = [
   { yr: '2024—', co: 'Johnson & Johnson', role: 'Software Developer',          loc: 'New Brunswick, NJ',     note: 'FHIR microservice across 15 hospitals; −35% booking time.' },
@@ -208,9 +214,32 @@ export default function EditorialPage() {
             </div>
           </Spread>
 
+          {/* CITATIONS — papers ledger */}
+          <Spread num="07" title="Citations">
+            <div className="font-mono text-[11px] tracking-wider uppercase text-[#111]/60 mb-6">
+              {stats.publications} publications · {stats.citations}+ cumulative citations · Google Scholar
+            </div>
+            <ol className="space-y-6">
+              {citations.map((c, i) => (
+                <li key={i} className="grid grid-cols-12 gap-4 border-t border-[#111]/15 pt-4">
+                  <div className="col-span-12 md:col-span-1 font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/55">{String(i+1).padStart(2,'0')}</div>
+                  <div className="col-span-12 md:col-span-2 font-mono text-[11px] tracking-wider uppercase text-[#111]/70">{c.yr}</div>
+                  <div className="col-span-12 md:col-span-7">
+                    <div className="font-serif text-xl lg:text-2xl leading-snug">&ldquo;{c.title}&rdquo;</div>
+                    <div className="font-mono text-[11px] tracking-wider uppercase text-[#111]/60 mt-1">{c.venue}</div>
+                  </div>
+                  <div className="col-span-12 md:col-span-2 text-right">
+                    <div className="font-serif italic text-3xl">{c.cites}</div>
+                    <div className="font-mono text-[9px] tracking-[0.3em] uppercase text-[#111]/55">citations</div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </Spread>
+
           {/* ADDRESS */}
           <section id="address" className="pt-24 pb-32 border-t border-[#111]/40">
-            <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/60 mb-6">No. 07 · Address</div>
+            <div className="font-mono text-[10px] tracking-[0.3em] uppercase text-[#111]/60 mb-6">No. 08 · Address</div>
             <h2 className="font-serif text-[12vw] lg:text-[140px] leading-[0.88] tracking-tight">
               Write to me<span className="text-[#111]/40">.</span>
             </h2>

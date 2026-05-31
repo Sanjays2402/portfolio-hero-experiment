@@ -1,7 +1,7 @@
 'use client'
 // V6 — ZINE (rebuilt): real halftone, CMYK misregistration, comic panels in hero,
 // staples, paper texture, hand-drawn marks
-import { profile, experience, projects, skills } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 const PAPER = `
@@ -136,6 +136,36 @@ export default function Zine() {
             ))}
           </div>
           <PageNumber n="04" />
+        </Panel>
+
+        {/* RESEARCH — letters page */}
+        <Panel rotate="0.6deg" bg="#fee2e2">
+          <Staple style={{ top: -4, left: '20%' }} />
+          <Staple style={{ top: -4, right: '20%' }} />
+          <div className="relative px-6 md:px-10 py-10" style={{ backgroundImage: HALFTONE, backgroundSize: '6px 6px' }}>
+            <div className="border-4 border-black bg-yellow-200 inline-block px-4 py-2 mb-4 -rotate-2" style={{ boxShadow: '4px 4px 0 #000' }}>
+              <div className="text-[10px] uppercase tracking-[0.3em] font-bold">★ Letters Page ★</div>
+              <h2 className="font-black uppercase text-3xl md:text-4xl leading-none">PUBLISHED!</h2>
+            </div>
+            <div className="text-xs uppercase tracking-wider font-bold mb-4">{stats.publications} papers · {stats.citations}+ citations</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {research.map((r, i) => (
+                <div key={i} className="border-[3px] border-black bg-white p-4 relative" style={{ boxShadow: '4px 4px 0 #000', transform: `rotate(${(i % 2 ? 0.5 : -0.5)}deg)` }}>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="text-[10px] font-bold uppercase tracking-wider bg-black text-white px-2 py-0.5">{r.year}</div>
+                    <div className="text-right">
+                      <div className="text-2xl font-black leading-none">{r.citations}★</div>
+                      <div className="text-[8px] uppercase tracking-wider">cites</div>
+                    </div>
+                  </div>
+                  <div className="font-black text-base leading-tight">{r.title}</div>
+                  <div className="text-[10px] italic mt-2 opacity-70">{r.authors}</div>
+                  <div className="text-[10px] font-bold mt-1">{r.venue}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <PageNumber n="05" />
         </Panel>
 
         {/* BACK COVER — contact */}

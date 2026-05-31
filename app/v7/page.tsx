@@ -2,7 +2,7 @@
 // V7 — MUSEUM (rebuilt): real spotlight gradient, gilded painting frames,
 // caption plaques, audio-guide tracks, marble feel
 import { useEffect, useState } from 'react'
-import { profile, experience, projects, skills } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 export default function Museum() {
@@ -138,8 +138,28 @@ export default function Museum() {
         </div>
       </Room>
 
-      {/* V — CORRESPONDENCE */}
-      <Room number="V" title="Correspondence" subtitle="Inquiries welcomed by post, by wire, or by network" last>
+      {/* V — RESEARCH */}
+      <Room number="V" title="Treatises & Papers" subtitle={`Published research · ${stats.publications} works · ${stats.citations}+ citations`}>
+        <div className="space-y-10">
+          {research.map((r, i) => (
+            <article key={i} className="grid grid-cols-12 gap-6 items-baseline border-t border-amber-200/15 pt-8">
+              <div className="col-span-12 md:col-span-2 text-right">
+                <div className="text-4xl italic font-light text-amber-200">{r.citations}</div>
+                <div className="text-[10px] tracking-[0.4em] uppercase text-stone-400 mt-1">citations</div>
+                <div className="text-[10px] tracking-[0.4em] uppercase text-stone-400 mt-2">№ {String(i+1).padStart(2,'0')} · {r.year}</div>
+              </div>
+              <div className="col-span-12 md:col-span-10">
+                <h3 className="text-2xl md:text-3xl italic font-light text-stone-50 leading-snug">&ldquo;{r.title}&rdquo;</h3>
+                <div className="text-sm text-stone-400 italic mt-2">{r.authors}</div>
+                <div className="text-sm text-amber-200/80 mt-1 tracking-wider">{r.venue} · <span className="italic">{r.type}</span></div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Room>
+
+      {/* VI — CORRESPONDENCE */}
+      <Room number="VI" title="Correspondence" subtitle="Inquiries welcomed by post, by wire, or by network" last>
         <div className="text-center max-w-2xl mx-auto">
           <Ornament />
           <p className="italic font-light text-2xl text-stone-200 leading-relaxed mt-6">

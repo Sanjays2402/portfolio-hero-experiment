@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 /* ─────────────  V13 · BLOOMBERG TERMINAL  ─────────────
@@ -162,6 +162,25 @@ export default function V13() {
 
         {/* BOTTOM-RIGHT · EDUCATION + NEWS */}
         <Panel className="col-span-5" title="ANALYST NOTES &amp; PROVENANCE">
+          <div className="text-amber-200/60 uppercase text-[10px] tracking-wider mb-1">PUB INDEX · {stats.publications} ISSUES · {stats.citations} CITES</div>
+          <table className="w-full text-[11px] mb-3">
+            <thead>
+              <tr className="text-amber-200/50 text-left">
+                <th className="font-normal py-0.5">YR</th>
+                <th className="font-normal">TITLE</th>
+                <th className="font-normal text-right">CITE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {research.map((r, i) => (
+                <tr key={i} className="border-t border-amber-200/10 hover:bg-amber-200/5">
+                  <td className="py-1 pr-2 text-amber-100">{r.year}</td>
+                  <td className="py-1 text-amber-100/90 truncate max-w-[16rem]" title={r.title}>{r.title.length > 38 ? r.title.slice(0,36) + '…' : r.title}</td>
+                  <td className="py-1 text-right text-green-400 tabular-nums">{r.citations}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
           <div className="text-amber-200/60 uppercase text-[10px] tracking-wider mb-1">EDUCATION</div>
           {education.map(e => (
             <div key={e.degree} className="mb-2 text-[12px]">

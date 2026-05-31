@@ -1,5 +1,5 @@
 'use client'
-import { profile, experience, projects, skills } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 /* ─────────────  V11 · THERMAL RECEIPT  ─────────────
@@ -94,6 +94,21 @@ export default function V11() {
               <Row key={cat} l={cat.toUpperCase().padEnd(14) + (items as string[]).length.toString().padStart(2)+' ITEMS'} r={`$${((items as string[]).length * 49).toFixed(2)}`} />
             ))}
           </div>
+
+          <div className="my-2 text-[12px]">{SEP}</div>
+
+          {/* RESEARCH LINE ITEMS */}
+          <div className="text-[12px] font-bold uppercase">— LINE ITEMS · RESEARCH —</div>
+          <div className="mt-1 space-y-0.5">
+            {research.map((r, i) => (
+              <div key={i}>
+                <Row l={`${(i+1).toString().padStart(2,'0')} ${r.title.slice(0,28).toUpperCase()}`} r={`${r.citations} CITE`} />
+                <div className="text-[11px] pl-3 opacity-80">{r.venue.slice(0,32)} · {r.year}</div>
+              </div>
+            ))}
+          </div>
+          <div className="my-1 text-[12px]">{SEP}</div>
+          <Row l={`PUBLICATIONS         ${stats.publications}`} r={`${stats.citations}+ CITES`} bold />
 
           <div className="my-2 text-[12px]">{SEP}</div>
 

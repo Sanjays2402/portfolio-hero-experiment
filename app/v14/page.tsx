@@ -1,5 +1,5 @@
 'use client'
-import { profile, experience, projects, skills, education } from '@/lib/portfolio-data'
+import { education, experience, profile, projects, research, skills, stats } from '@/lib/portfolio-data'
 import { VariantSwitcher } from '@/components/variant-switcher'
 
 /* ─────────────  V14 · POLAROID CORKBOARD  ─────────────
@@ -69,6 +69,23 @@ const cards: Card[] = [
       ))}
     </div>,
     rotate: 3, x: '26%', y: '74%', z: 4, color: '#bbf7d0',
+  },
+  {
+    id: 'research', kind: 'note', tone: 'card',
+    header: 'Published Papers',
+    caption: `${stats.publications} works · ${stats.citations}+ cites`,
+    body: <div className="p-3 text-[11px] text-stone-100 leading-snug">
+      {research.map((r, i) => (
+        <div key={i} className="mb-2 pb-2 border-b border-stone-700/60 last:border-0">
+          <div className="flex justify-between items-baseline gap-2">
+            <div className="font-bold text-stone-50 text-[11px] leading-tight">{r.title}</div>
+            <div className="shrink-0 text-amber-300 font-bold tabular-nums">{r.citations}★</div>
+          </div>
+          <div className="text-stone-400 italic mt-0.5 text-[10px]">{r.venue} · {r.year}</div>
+        </div>
+      ))}
+    </div>,
+    rotate: 1.8, x: '70%', y: '72%', z: 7, color: '#0f172a',
   },
   {
     id: 'contact', kind: 'note', tone: 'card',
