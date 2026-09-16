@@ -1,18 +1,36 @@
 # Portfolio Hero Experiment
 
-Four animated hero centerpieces wrapped around the same editorial shell.
-Built in one shot to compare aesthetics side-by-side — same nav, same typography, same CTAs, only the canvas behind changes.
+Fifteen complete portfolio sites wrapped around the same person.
+Built to compare design languages side-by-side — same data, same nav, same CTAs, only the aesthetic changes.
 
 🔗 **Live:** https://sanjays2402.github.io/portfolio-hero-experiment/
 
 ## Variants
 
-| Route | Style | Tech |
+| Route | Style | Tech / theme |
 |---|---|---|
-| `/v1` | Gradient Orb | Layered conic-gradient sphere + orbiting particles |
-| `/v2` | Wireframe Globe | Rotating lat/lng grid, isometric projection, glowing nodes |
-| `/v3` | Particle Field | 1,500 points flowing through a noise vector field |
-| `/v4` | Synthwave Grid | Perspective tunnel + sun, outrun aesthetic |
+| `/v1` | Glass | Aurora gradients, frosted depth |
+| `/v2` | Terminal | CRT, command-line, shell history |
+| `/v3` | Brutalist | Yellow, black, no mercy |
+| `/v4` | Synthwave | Perspective grid + sun, outrun aesthetic |
+| `/v5` | Blueprint | Technical drawing, "Drawing No. SS-2026" |
+| `/v6` | Zine | Halftone comic, hand-stapled |
+| `/v7` | Museum | Spotlit, serif, hushed |
+| `/v8` | Y2K Aero | Frutiger Metro · 2003 |
+| `/v9` | Boarding | Sanjay Air · JAI → SEA boarding pass |
+| `/v10` | Newspaper | Broadsheet, drop caps, wire copy |
+| `/v11` | Receipt | Thermal print, dot-matrix, barcode |
+| `/v12` | Subway | MTA line map of a career |
+| `/v13` | Bloomberg | Career as a market product |
+| `/v14` | Polaroid | Corkboard, washi tape, push-pins |
+| `/editorial` | Editorial | Magazine spread, serif |
+
+## Navigating
+
+Every page carries a floating **Variant** switcher at the bottom of the screen —
+click any label to jump straight to that variant, or press **← / →** arrow keys
+to flip through them in order (gallery → v1 → … → editorial). Arrow keys are
+ignored while typing in a text field.
 
 ### v1 — Gradient Orb
 ![v1](public/v1.png)
@@ -42,4 +60,4 @@ npm run dev
 # → http://localhost:3000
 ```
 
-Visit `/` for the gallery, or `/v1`–`/v4` for individual heroes.
+Visit `/` for the gallery, or `/v1`–`/v14` and `/editorial` for individual portfolios.

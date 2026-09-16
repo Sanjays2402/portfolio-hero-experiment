@@ -1,5 +1,7 @@
 'use client'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
 
 const variants = [
   { slug: '',          label: 'Gallery' },
@@ -21,6 +23,28 @@ const variants = [
 ]
 
 export function VariantSwitcher({ current, dark = true }: { current: string; dark?: boolean }) {
+  const router = useRouter()
+
+  // Arrow-key navigation: ← / → flips to the previous / next variant.
+  // Ignores keystrokes in text fields and any modifier-key combos.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return
+      const target = e.target as HTMLElement | null
+      const tag = target?.tagName
+      if (tag === 'INPUT' || tag === 'TEXTAREA' || target?.isContentEditable) return
+      const idx = variants.findIndex(v => v.slug === current)
+      const next = idx + (e.key === 'ArrowRight' ? 1 : -1)
+      if (idx === -1 || next < 0 || next >= variants.length) return
+      e.preventDefault()
+      const slug = variants[next].slug
+      router.push(slug ? `/${slug}` : '/')
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [current, router])
+
   const base = dark
     ? 'bg-black/70 border-white/15 text-white/60 backdrop-blur-xl'
     : 'bg-white/85 border-black/15 text-black/60 backdrop-blur-xl'
@@ -38,6 +62,7 @@ export function VariantSwitcher({ current, dark = true }: { current: string; dar
           {v.label}
         </Link>
       ))}
+      <span className="pl-2 pr-1 text-[10px] font-mono opacity-40 whitespace-nowrap" title="Use ← → arrow keys to flip between variants">←→</span>
     </div>
   )
 }
